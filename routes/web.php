@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -22,10 +23,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/add', [UserController::class, 'create'])->name('user.create');
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/book', [BookController::class, 'index'])->name('book.index');
 
 // Route::get('/user1', ShowUsers::class);
